@@ -1,0 +1,14 @@
+
+<div class="jumbotron">
+  <h3>Select your degree:</h3> 
+  <br>
+
+  <p ng-repeat="degree in degreeItems">
+    <a class="btn btn-sm btn-primary" ng-click="buttonAction()" href="#/iat">
+    	{{degree.message}}
+    </a>
+  </p>
+
+  <!-- Idea: Make it radio btns:https://scotch.io/tutorials/handling-checkboxes-and-radio-buttons-in-angular-forms  -->
+
+</div>

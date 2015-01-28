@@ -1,0 +1,21 @@
+<!-- <body ng-controller="CourseListCtrl"> -->
+
+<div class="jumbotron">
+Results View
+<br>
+
+Degree
+<p ng-repeat="degree in degreeItems track by $index">
+	{{degree.message}}
+</p>
+
+<br>
+IAT courses taken
+<ul>
+	<li ng-repeat="course in courses track by $index">
+		{{course.name}}	
+	</li>
+</ul>
+
+</div> <!-- end jumbotron -->
+<!-- </body> -->
