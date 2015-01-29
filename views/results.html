@@ -1,21 +1,24 @@
 <!-- <body ng-controller="CourseListCtrl"> -->
 
-<div class="jumbotron">
-Results View
-<br>
+<div class="jumbotron-left">
 
-Degree
-<p ng-repeat="degree in degreeItems track by $index">
-	{{degree.message}}
-</p>
+<h2>Results</h2>
+	<p>
+		<strong>Degree:</strong>
+		<p ng-repeat="degree in degreeItems track by $index">
+			{{degree.message}}
+		</p>
+	</p>
 
-<br>
-IAT courses taken
-<ul>
-	<li ng-repeat="course in courses track by $index">
-		{{course.name}}	
-	</li>
-</ul>
+
+		<p>
+		<strong>IAT courses taken:</strong>
+		<ul>
+			<li ng-repeat="course in courses track by $index">
+				{{course.name}}	
+			</li>
+		</ul>
+	</p>
 
 </div> <!-- end jumbotron -->
 <!-- </body> -->

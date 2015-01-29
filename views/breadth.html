@@ -3,25 +3,91 @@
 <div class="jumbotron-left">
   <h2>Breadth Courses</h2>
   <p>Slide to the number of credits you've taken for each category.</p>
-  <section>
-		<input type="range" min="0" max="6" step="1" value="0">
-		<strong>B-Hum:</strong> &nbsp; <outpit id="js-output"></output>
+
+ 	 <!B-Hum Slider>
+  	<section>
+  		<strong>B-Hum:</strong> &nbsp; <outpit id="js-output"></output>
+  		<input type = "range" min="0" max="6" value="0" onchange="rangevalue1.value=value"/>
+		<output id="rangevalue1">0</output>
 	</section>
 
+	<!B-Sci Slider>
 	<section>
-		<input type="range" min="0" max="6" step="1" value="0">
 		<strong>B-Sci:</strong> &nbsp;<outpit id="js-output"></output>
+		<input type = "range" min="0" max="6" value="0" onchange="rangevalue2.value=value"/>
+		<output id="rangevalue2">0</output>
 	</section>
 
+	<!B-Soc Slider>
 	<section>
-		<input type="range" min="0" max="6" step="1" value="0">
 		<strong>B-Soc:</strong>&nbsp;<outpit id="js-output"></output>
+		<input type = "range" min="0" max="6" value="0" onchange="rangevalue3.value=value"/>
+		<output id="rangevalue3">0</output>		
 	</section>
 
+	<!Undesignated Slider>
 	<section>
-		<input type="range" min="0" max="6" step="1" value="0">
-		<strong>Undesignated Breadth:</strong>&nbsp; <outpit id="js-output"></output>
+		<strong>Undesignated:</strong>&nbsp; <outpit id="js-output"></output>
+		<input type = "range" min="0" max="6" value="0" onchange="rangevalue4.value=value"/>
+		<output id="rangevalue4">0</output>
 	</section>
+		
+
+
+	<!Calculate Total>
+	<section>
+	<script>
+	function totalIt() {
+     var rval01 = document.getElementById("rangevalue1").value;
+     var rval02 = document.getElementById("rangevalue2").value;
+     var rval03 = document.getElementById("rangevalue3").value;
+     var rval04 = document.getElementById("rangevalue4").value;
+
+     if ((isNumeric(rval01, true)) && (isNumeric(rval02, true)) && (isNumeric(rval03, true)) && (isNumeric(rval04, true))) {
+         rval01 = parseFloat(rval01);
+         rval02 = parseFloat(rval02);
+         rval03 = parseFloat(rval03);
+         rval04 = parseFloat(rval04);
+         var rvaltotal = rval01 + rval02 + rval03 + rval04;
+         document.getElementById("total").value = rvaltotal;
+         document.getElementById("total").submit();
+         
+     } 
+	}
+
+	function isNumeric(sText, decimalAllowed) {
+        if (sText.length == 0) return false;
+    	var validChars = "";
+		if (decimalAllowed) {
+	    	validChars = "0123456789.";
+		} else {
+	   	 validChars = "0123456789";
+		}
+        var isNumber = true;
+        var charA;
+		var decimalCount = 0;
+        for (i = 0; i < sText.length && isNumber == true && decimalCount < 2; i++) {
+            charA = sText.charAt(i); 
+	    if (charA == ".") { 
+		decimalCount += 1;
+	    }
+            if (validChars.indexOf(charA) == -1) {
+               isNumber = false;
+            }
+        }
+        return isNumber;
+	}
+	</script>
+
+	<form name="form1" id="form1" method="post" action="myphp.php">
+    <input type="text" name="total" id="total" readonly="true" />
+    <input type="button" name="btn" id="btn" value="Calculate Total" onClick="totalIt()" />
+	</form>
+	</section>
+
+
+
+
 </div>
 </div>
 

@@ -12,8 +12,9 @@
 				</select>
 			<!-- </div> -->
 			<div class ="col-md-10">
-				<ul class="courses">
-					<li ng-repeat="course in courses | filter:query | orderBy:orderProp" ng-click="buttonAction()">
+				<ul class="courses course-btn ">
+					<li class="iatbtn" ng-repeat="course in courses | filter:query | orderBy:orderProp" ng-click="buttonAction(iatSelected)">
+
 						{{course.name}}
 						{{course.snippet}}
 					</li>
@@ -21,10 +22,6 @@
 			</div>
 
 
-<!-- 			<h3>Buttons clicked on main page</h3>
-			<p ng-repeat="item in menuItems track by $index">
-				{{item.message}}
-			</p> -->
 		</div>
 	</div>
 

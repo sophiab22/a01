@@ -30,10 +30,10 @@ var APP = angular.module('myappApp', [
         templateUrl: 'views/degree.html',
         controller: 'DegreeCtrl'
       })
-      // .when('/breadth', {
-      //   templateUrl: 'views/breadth.html',
-      //   controller: 'BreadthCtrl'
-      // })
+      .when('/breadth', {
+        templateUrl: 'views/breadth.html',
+        controller: 'BreadthCtrl'
+      })
       .when('/results', {
         templateUrl: 'views/results.html',
         controller: 'ResultsCtrl'

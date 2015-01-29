@@ -12,11 +12,12 @@ APP.controller('CourseListCtrl', ['$scope', '$http',
 
 	$scope.orderProp = 'age';
 
-	$scope.buttonAction = function() {
+	$scope.buttonAction = function($event) {
+		
+
 		console.log(this);
 		APP.coursesSelected.push(this.course);
 	}
-	console.log($scope);
 
 }]);
 
